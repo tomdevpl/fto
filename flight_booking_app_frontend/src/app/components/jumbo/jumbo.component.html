@@ -1,0 +1,18 @@
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="text-primary text-bold">FTO </h1>
+            <h4 class="text-muted">Flight Ticket Online</h4>
+            <p class="lead text-muted">Best airlines if you want to travel alone, but you can meet new people. 100 % satisfaction, best prices, least options to choose from.</p>
+            <p>
+                <a routerLink="../login" class="btn btn-primary my-2" *ngIf="!authenticationService.isAuthenticated">Login to Book Flight!</a>
+                <a routerLink="../flights" class="btn btn-primary my-2" *ngIf="authenticationService.isAuthenticated">Book Flight!</a>
+
+            </p>
+        </div>
+    </section>
+
+
+
+</main>

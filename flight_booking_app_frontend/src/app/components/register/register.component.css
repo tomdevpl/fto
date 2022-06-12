@@ -1,0 +1,12 @@
+.container {
+    margin-top: 10rem;
+    max-width: 576px;
+}
+
+.btn-reg {
+    width: 100%;
+}
+
+.title-reg {
+    margin: 2rem;
+}

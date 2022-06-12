@@ -1,0 +1,50 @@
+<div class="container">
+    <h1 class="title-reg text-primary text-center row-cols-1">
+        <strong>Register</strong>
+    </h1>
+    <form [formGroup]="register" (ngSubmit)="collectUser(registerForm)" #registerForm="ngForm">
+        <!-- first and last names -->
+        <div class="form-group row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <input type="text" ngModel required autofocus class="form-control" formControlName="firstName" />
+                    <label class="form-label" for="form3Example1">First name</label>
+                </div>
+            </div>
+            <div class="form-group col">
+                <div class="form-outline">
+                    <input type="text" ngModel required class="form-control" formControlName="lastName" />
+                    <label class="form-label" for="form3Example2">Last name</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-group form-outline mb-4">
+            <input type="email" ngModel required class="form-control" formControlName="email" />
+            <label class="form-label" for="form3Example3">Email address</label>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-group form-outline mb-4">
+            <input type="password" id="form3Example4" ngModel required class="form-control" formControlName="password" />
+            <label class="form-label" for="form3Example4">Password</label>
+        </div>
+        <!-- Alert Form -->
+        <div class="alert alert-danger" role="alert" *ngIf="isFormValid">
+            Please fill all fields.
+        </div>
+
+        <!-- Alert Success -->
+        <div class="alert alert-success" role="alert" *ngIf="userCreated">
+            Your account is created. Please login.
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn-reg btn btn-primary btn-block mb-4">Register</button>
+
+        <!-- Sign In button -->
+        <button class="btn-reg btn btn-primary btn-block mb-4" routerLink="/login">Login</button>
+
+    </form>
+</div>

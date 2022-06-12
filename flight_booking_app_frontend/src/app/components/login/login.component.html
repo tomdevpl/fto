@@ -1,0 +1,36 @@
+ localStorage.setItem('token', JSON.stringify('firstName':user.firstName, 'lastName':user.lastName));
+<div class="login-wrapper">
+    <div class="">
+        <div class="">
+            <form class="form-signin" (ngSubmit)="onLogin(signInForm)" #signInForm="ngForm">
+                <!-- <form class="form-signin"> -->
+                <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+
+                <label for="inputlogin" class="sr-only">Email</label>
+                <input type="text" id="inputLogin" class="form-control" name="email" placeholder="Email" ngModel required autofocus>
+
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" autocomplete="on" ngModel required>
+
+                <button class="btn btn-lg btn-primary btn-block btn-reg" type="submit" [disabled]="!signInForm.valid">Login</button>
+                <!-- <button class="btn btn-lg btn-primary btn-block btn-reg" type="submit">Login</button> -->
+
+                <!-- Sign In button -->
+                <button class="btn btn-lg btn-primary btn-block btn-reg" routerLink="/register">Register</button>
+
+                <!-- <div class="alert alert-danger" role="alert" *ngIf="isFormValid">
+                    Please fill all fields.
+                </div> -->
+                <div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
+                    Invalid user or password.
+                </div>
+
+                <!-- Alert Success -->
+                <!-- <div class="alert alert-success" role="alert" *ngIf="loginSuccess">
+                    Login Successful
+                </div> -->
+
+            </form>
+        </div>
+    </div>
+</div>

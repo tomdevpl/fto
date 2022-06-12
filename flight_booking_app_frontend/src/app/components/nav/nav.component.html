@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light text-primary bg-warning sticky-top">
+    <a class="navbar-brand link-primary" routerLink="/home">
+        <img src="../../../assets/img/nav-plane.png" width="40" height="40" class="d-inline-block align-top " alt="">FTO
+    </a>
+    <button (click)="clickEvent($event)" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [ngClass]="{'show': toggle}" class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ">
+            <!-- <li *ngFor="let items of menuItems " class="nav-item active  ">
+                <a class="nav-link link-primary" routerLink="{{items.linkUrl}}">{{items.linkName}}<span class="sr-only"></span></a>
+            </li> -->
+
+            <li class="nav-item">
+                <a class="nav-link link-primary" routerLink="./home">home<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item" *ngIf="loggedIn()">
+                <a class="nav-link link-primary" routerLink="./flights">flights<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item" *ngIf="!loggedIn()">
+                <a class="nav-link link-primary" routerLink="./login">login<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item" *ngIf="loggedIn()">
+                <a class="nav-link link-primary pointer" (click)="logout()">logout<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item" *ngIf="!loggedIn()">
+                <a class="nav-link link-primary " routerLink="./register">register<span class="sr-only"></span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
