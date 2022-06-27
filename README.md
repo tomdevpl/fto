@@ -15,3 +15,5 @@ f**light_booking_app_backend:**
 ---
 
 Register your account -> Login -> Search for flight and make reservation
+
+Angular & Express
